@@ -34,14 +34,7 @@ router.post("/signup",async(req,res)=>{
 });
 
 
-router.put("/add-sport/:userId",async(req,res)=>{
-    try {
-        const user =await User.findByIdAndUpdate(req.params.userId,{$push:{sports:req.body.name}},{new:true});
-        res.json(user)
-    } catch (error) {
-        console.log({msg:error.message});
-    }
-});
+
 
 //user login
 router.post("/login",async (req,res)=>{
